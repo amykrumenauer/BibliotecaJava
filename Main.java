@@ -105,10 +105,12 @@ public class Main {
         String tituloBusca = "1984";
         Livro encontrado = arvoreLivros.buscar(tituloBusca);
         if (encontrado != null) {
-            System.out.println("\n🔍 Livro encontrado na árvore: " + encontrado);
+            System.out.println("\nLivro encontrado na árvore: " + encontrado);
         } else {
             System.out.println("\nLivro \"" + tituloBusca + "\" não encontrado na árvore.");
         }
+
+        ComparadorDeAlgoritmos.main(args);  // Chama o método main de ComparadorDeAlgoritmos
     }
 }
 
