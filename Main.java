@@ -3,17 +3,26 @@ public class Main {
         // Criando a biblioteca (lista encadeada)
         Biblioteca biblioteca = new Biblioteca();
 
-        // Criando livros
-        Livro livro1 = new Livro("O Senhor dos Anéis", "J.R.R. Tolkien", 1954);
-        Livro livro2 = new Livro("1984", "George Orwell", 1949);
-        Livro livro3 = new Livro("Dom Casmurro", "Machado de Assis", 1899);
-        Livro livro4 = new Livro("A Revolução dos Bichos", "George Orwell", 1945);
-        Livro livro5 = new Livro("Fahrenheit 451", "Ray Bradbury", 1953);
-        Livro livro6 = new Livro("O Hobbit", "J.R.R. Tolkien", 1937);
-        Livro livro7 = new Livro("Admirável Mundo Novo", "Aldous Huxley", 1932);
-        Livro livro8 = new Livro("O Sol é para Todos", "Harper Lee", 1960);
-        Livro livro9 = new Livro("O Grande Gatsby", "F. Scott Fitzgerald", 1925);
-        Livro livro10 = new Livro("Mataram a Cotovia", "Harper Lee", 1962);
+        // Criando livros organizados por temas
+        // === Ficção psicológica e intensa ===
+        Livro livro1 = new Livro("Psicopata Americano", "Bret Easton Ellis", 1991); // Ficção psicológica
+        Livro livro2 = new Livro("Metamorfose", "Franz Kafka", 1915); // Ficção psicológica
+        Livro livro3 = new Livro("Verity", "Colleen Hoover", 2018); // Thriller romântico
+
+        // === Romance e relacionamentos ===
+        Livro livro4 = new Livro("O Lado Feio do Amor", "Colleen Hoover", 2015); // Romance
+        Livro livro5 = new Livro("Amores Verdadeiros", "Emily Giffin", 2013); // Romance
+
+        // === Contemporâneos sobre comportamento humano ===
+        Livro livro6 = new Livro("Pessoas Normais", "Sally Rooney", 2018); // Romance contemporâneo
+        Livro livro7 = new Livro("A Gente Mira no Amor e Acerta na Solidão", "Carol Sabar", 2016); // Romance contemporâneo
+
+        // === Autoajuda e reflexão pessoal ===
+        Livro livro8 = new Livro("O livro que você gostaria que todas as pessoas que você ama lessem: (E talvez algumas que você não ame)", "Philippa Perry", 2024); // Autoajuda
+
+        // === Clássicos filosóficos e introspectivos ===
+        Livro livro9 = new Livro("A Hora da Estrela", "Clarice Lispector", 1977); // Introspectivo
+        Livro livro10 = new Livro("O Expresso de Sócrates", "Edson Oliveira", 2003); // Filosofia
 
         // Adicionando livros à biblioteca (lista encadeada)
         biblioteca.adicionarLivro(livro1);
@@ -36,14 +45,14 @@ public class Main {
         biblioteca.imprimirLivros();
 
         // Simulando navegação
-        historico.adicionarHistorico(livro4);
-        historico.adicionarHistorico(livro8);
+        historico.adicionarHistorico(livro3);
+        historico.adicionarHistorico(livro9);
 
         // Exibindo o histórico de navegação
         historico.exibirHistorico();
 
         // Fila de espera
-        filaEspera.adicionarFila(livro3);
+        filaEspera.adicionarFila(livro8);
         filaEspera.exibirFila();
         filaEspera.removerFila();
         filaEspera.exibirFila();
@@ -68,13 +77,11 @@ public class Main {
         sistemaRecomendacao.adicionarLivro(livro9);
         sistemaRecomendacao.adicionarLivro(livro10);
 
-        sistemaRecomendacao.adicionarRelacao(livro1, livro6);
-        sistemaRecomendacao.adicionarRelacao(livro2, livro4);
-        sistemaRecomendacao.adicionarRelacao(livro3, livro2);
         sistemaRecomendacao.adicionarRelacao(livro1, livro2);
-        sistemaRecomendacao.adicionarRelacao(livro4, livro5);
-        sistemaRecomendacao.adicionarRelacao(livro7, livro9);
-        sistemaRecomendacao.adicionarRelacao(livro8, livro10);
+        sistemaRecomendacao.adicionarRelacao(livro3, livro4);
+        sistemaRecomendacao.adicionarRelacao(livro5, livro4);
+        sistemaRecomendacao.adicionarRelacao(livro6, livro7);
+        sistemaRecomendacao.adicionarRelacao(livro9, livro10);
 
         // Exibindo recomendações com base no histórico
         System.out.println("\n------------- R e c o m e n d a ç õ e s  b a s e a d a s  n o  s e u  g o s t o ! ---------------");
@@ -102,7 +109,7 @@ public class Main {
         arvoreLivros.exibirLivros();
 
         // Buscar um livro específico
-        String tituloBusca = "1984";
+        String tituloBusca = "Verity";
         Livro encontrado = arvoreLivros.buscar(tituloBusca);
         if (encontrado != null) {
             System.out.println("\nLivro encontrado na árvore: " + encontrado);
@@ -110,8 +117,14 @@ public class Main {
             System.out.println("\nLivro \"" + tituloBusca + "\" não encontrado na árvore.");
         }
 
-        ComparadorDeAlgoritmos.main(args);  // Chama o método main de ComparadorDeAlgoritmos
+        // Comparador de algoritmos
+        ComparadorDeAlgoritmos.main(args);
+
+        // Exibindo caminhos mais curtos
+        System.out.println("\n------------- C a m i n h o s  m a i s  c u r t o s ---------------");
+        sistemaRecomendacao.exibirCaminhosMaisCurtos(livro5); // Substitua pelo livro desejado
     }
 }
+
 
 

@@ -1,6 +1,6 @@
 # 📚 Biblioteca Virtual em Java
 
-Este é um projeto acadêmico que simula uma **biblioteca virtual**, desenvolvido em Java, com o objetivo de aplicar e integrar estruturas de dados clássicas, como **listas encadeadas**, **pilhas**, **filas**, **grafos** e **árvores binárias de busca (BST)**.
+Este é um projeto acadêmico que simula uma **biblioteca virtual**, desenvolvido em Java, com o objetivo de aplicar e integrar estruturas de dados clássicas, como **listas encadeadas**, **pilhas**, **filas**, **grafos**, **árvores binárias de busca (BST)** e **algoritmos de ordenação**.
 
 ## 🚀 Funcionalidades Implementadas
 
@@ -10,6 +10,7 @@ Este é um projeto acadêmico que simula uma **biblioteca virtual**, desenvolvid
 - ✅ **Sistema de Recomendação (Grafo):** Relaciona livros semelhantes e oferece sugestões ao usuário.
 - ✅ **Árvore Binária de Busca (BST):** Organiza os livros por título e permite busca eficiente.
 - ✅ **Comparador de Algoritmos (Bubble Sort vs Merge Sort)**: Analisa desempenho em listas de livros com 10 mil nomes aleatórios.
+- ✅ **Algoritmo de Dijkstra:** Identifica os livros mais relacionados com base na menor distância no grafo.
 
 ## 📁 Estrutura de Arquivos
 
@@ -41,6 +42,14 @@ Através da classe `ComparadorDeAlgoritmos.java`, é realizada a comparação en
 | Merge Sort    | ~120.000          | ~6.5 ms            |
 
 📌 Essa análise reforça o impacto da escolha do algoritmo conforme o volume de dados.
+
+## 🔗 Recomendação com Grafo + Dijkstra
+
+O sistema de recomendação utiliza um grafo não direcionado onde os livros com temas semelhantes são conectados. Para sugerir livros ao usuário com base nos que ele visualizou:
+
+- Os caminhos mais curtos são determinados com algoritmo de Dijkstra;
+- A distância indica a proximidade temática;
+- Quanto menor a distância, maior a chance de ser uma recomendação relevante.
 
 ## 🔧 Como Executar
 
