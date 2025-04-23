@@ -7,7 +7,7 @@ public class Main {
         // === Ficção psicológica e intensa ===
         Livro livro1 = new Livro("Psicopata Americano", "Bret Easton Ellis", 1991); // Ficção psicológica
         Livro livro2 = new Livro("Metamorfose", "Franz Kafka", 1915); // Ficção psicológica
-        Livro livro3 = new Livro("Verity", "Colleen Hoover", 2018); // Thriller romântico
+        Livro livro3 = new Livro("Verity", "Colleen Hoover", 2018); // Ficção psicológica
 
         // === Romance e relacionamentos ===
         Livro livro4 = new Livro("O Lado Feio do Amor", "Colleen Hoover", 2015); // Romance
